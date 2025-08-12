@@ -4,7 +4,33 @@ var gamePattern = [];
 var userClickedPattern =  [];
 
 
+
+var level = 0;
+
+var started = false;
+
+
+
+
+//when a keyboard key has been pressed, when that happens for the first time, call nextSequence()
+
+
+$(document).keypress(function(){
+if(started == false){
+    $("#level-title").text("Level" + level);
+
+    nextSequence();
+    started = true;
+}
+})
+
+
+
+
 function nextSequence(){
+
+    level++;
+    $("#level-title").text("Level" + level);
     var randomNumber = Math.floor(Math.random()* 4);
     var randomChosenColour = buttonColours[randomNumber];
 
@@ -45,4 +71,3 @@ setTimeout(function(){
 
 
 
-$()
