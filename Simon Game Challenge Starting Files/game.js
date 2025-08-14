@@ -86,11 +86,28 @@ function checkAnswer(currentLevel){
         }
     }else {
         console.log("wrong")
+        playSound(wrong);
+
+        $("body").addClass("game-over")
+
+        setTimeout(function(){
+            $("body").removeClass("game-over")
+        },200)
+
+
+        $("#level-title").text("Game Over, Press Any Key to Restart");
     }
 
     
 }
 
+
+function startOver(){
+    level = 0;
+    gamePattern = [];
+    started = false;
+
+}
 
 
 
